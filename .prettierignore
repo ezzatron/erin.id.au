@@ -1,6 +1,5 @@
+/.github/
 /.makefiles/
-/.vscode/
-/*.tsbuildinfo
 /artifacts/
 /next-env.d.ts
-/node_modules/
+/package.json
