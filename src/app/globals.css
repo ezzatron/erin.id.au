@@ -1,1 +1,13 @@
 @import "../styles/tailwind.css";
+
+body {
+  color-scheme: light;
+  background-color: var(--color-zinc-50);
+  color: var(--color-zinc-600);
+
+  @variant dark {
+    color-scheme: dark;
+    background-color: black;
+    color: var(--color-zinc-400);
+  }
+}

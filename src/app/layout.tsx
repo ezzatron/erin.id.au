@@ -1,5 +1,5 @@
-import { Providers } from "@/app/providers";
 import { Layout } from "@/components/Layout";
+import { readTheme } from "@/theme/read-theme";
 import { type Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
@@ -14,15 +14,17 @@ export const metadata: Metadata = {
     "I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  const theme = await readTheme();
+
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className="flex h-full bg-zinc-50 dark:bg-black">
-        <Providers>
-          <div className="flex w-full">
-            <Layout>{children}</Layout>
-          </div>
-        </Providers>
+    <html lang="en" data-theme={theme}>
+      <body>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
