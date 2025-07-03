@@ -1,0 +1,80 @@
+name: Continuous integration
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: 0 14 * * 0 # Every Sunday, at midnight AEST
+
+jobs:
+  ci:
+    name: Continuous integration
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure debug logs
+        if: runner.debug
+        run: |
+          echo "MF_DEBUG=true" >> "$GITHUB_ENV"
+          echo "MAKEFLAGS=d" >> "$GITHUB_ENV"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Unify file modification times
+        run: TOUCH_TIME="$(date -u +"%FT%TZ")" git ls-files -z | xargs -0 touch -d "$TOUCH_TIME"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install NPM dependencies
+        run: make link-dependencies
+
+      - name: Detect Playwright
+        id: detect-playwright
+        run: echo "version=$(npm ls playwright | grep -m1 -oE 'playwright@\S+' | cut -d'@' -f2)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ steps.detect-playwright.outputs.version }}-${{ runner.os }}-${{ runner.arch }}
+
+      - name: Test and lint
+        run: make ci
+
+      - name: Detect artifacts
+        if: "!cancelled()"
+        id: detect-artifacts
+        run: |
+          echo "suffix=${GITHUB_REPOSITORY//\//-}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT";
+          if [ -d artifacts/playwright/report/html ]; then echo "playwright=true" >> "$GITHUB_OUTPUT"; fi
+          if [ -d artifacts/vitest/browser/screenshots ]; then echo "vitest-screenshots=true" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Upload Playwright report
+        if: "!cancelled() && steps.detect-artifacts.outputs.playwright == 'true'"
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{ steps.detect-artifacts.outputs.suffix }}
+          path: artifacts/playwright/report/html
+
+      - name: Upload Vitest screenshots
+        if: "!cancelled() && steps.detect-artifacts.outputs.vitest-screenshots == 'true'"
+        uses: actions/upload-artifact@v4
+        with:
+          name: vitest-screenshots-${{ steps.detect-artifacts.outputs.suffix }}
+          path: artifacts/vitest/browser/screenshots
+
+      - name: Upload package manager files
+        if: "!cancelled()"
+        uses: actions/upload-artifact@v4
+        with:
+          name: package-manager-files-${{ steps.detect-artifacts.outputs.suffix }}
+          if-no-files-found: ignore
+          path: |
+            package-lock.json
+            package.json

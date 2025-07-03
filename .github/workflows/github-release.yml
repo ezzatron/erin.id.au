@@ -1,0 +1,25 @@
+name: Publish GitHub release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    name: GitHub release
+
+    permissions:
+      contents: write
+      discussions: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Unify file modification times
+        run: TOUCH_TIME="$(date -u +"%FT%TZ")" git ls-files -z | xargs -0 touch -d "$TOUCH_TIME"
+
+      - name: Publish GitHub release
+        uses: ghalactic/github-release-from-tag@v5
