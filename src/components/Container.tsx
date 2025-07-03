@@ -5,6 +5,17 @@ import {
   type ComponentRef,
 } from "react";
 
+export const Container = forwardRef<
+  ComponentRef<typeof ContainerOuter>,
+  ComponentPropsWithoutRef<typeof ContainerOuter>
+>(function Container({ children, ...props }, ref) {
+  return (
+    <ContainerOuter ref={ref} {...props}>
+      <ContainerInner>{children}</ContainerInner>
+    </ContainerOuter>
+  );
+});
+
 export const ContainerOuter = forwardRef<
   ComponentRef<"div">,
   ComponentPropsWithoutRef<"div">
@@ -28,16 +39,5 @@ export const ContainerInner = forwardRef<
     >
       <div className="mx-auto max-w-2xl lg:max-w-5xl">{children}</div>
     </div>
-  );
-});
-
-export const Container = forwardRef<
-  ComponentRef<typeof ContainerOuter>,
-  ComponentPropsWithoutRef<typeof ContainerOuter>
->(function Container({ children, ...props }, ref) {
-  return (
-    <ContainerOuter ref={ref} {...props}>
-      <ContainerInner>{children}</ContainerInner>
-    </ContainerOuter>
   );
 });

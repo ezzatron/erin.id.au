@@ -2,17 +2,6 @@ import { ContainerInner, ContainerOuter } from "@/components/Container";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-function NavLink({ href, children }: { href: string; children: ReactNode }) {
-  return (
-    <Link
-      href={href}
-      className="transition hover:text-teal-500 dark:hover:text-teal-400"
-    >
-      {children}
-    </Link>
-  );
-}
-
 export function Footer() {
   return (
     <footer className="mt-32 flex-none">
@@ -33,5 +22,16 @@ export function Footer() {
         </div>
       </ContainerOuter>
     </footer>
+  );
+}
+
+function NavLink({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+    >
+      {children}
+    </Link>
   );
 }

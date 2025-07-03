@@ -4,6 +4,22 @@ import { ThemeProvider, useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import { createContext, useEffect, useRef, type ReactNode } from "react";
 
+export const AppContext = createContext<{ previousPathname?: string }>({});
+
+export function Providers({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const previousPathname = usePrevious(pathname);
+
+  return (
+    <AppContext.Provider value={{ previousPathname }}>
+      <ThemeProvider attribute="class" disableTransitionOnChange>
+        <ThemeWatcher />
+        {children}
+      </ThemeProvider>
+    </AppContext.Provider>
+  );
+}
+
 function usePrevious<T>(value: T) {
   const ref = useRef<T>(undefined);
 
@@ -36,20 +52,4 @@ function ThemeWatcher() {
   }, [resolvedTheme, setTheme]);
 
   return null;
-}
-
-export const AppContext = createContext<{ previousPathname?: string }>({});
-
-export function Providers({ children }: { children: ReactNode }) {
-  const pathname = usePathname();
-  const previousPathname = usePrevious(pathname);
-
-  return (
-    <AppContext.Provider value={{ previousPathname }}>
-      <ThemeProvider attribute="class" disableTransitionOnChange>
-        <ThemeWatcher />
-        {children}
-      </ThemeProvider>
-    </AppContext.Provider>
-  );
 }
