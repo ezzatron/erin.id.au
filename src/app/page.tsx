@@ -128,7 +128,7 @@ function Resume() {
   );
 }
 
-export default async function Home() {
+export default async function HomePage() {
   return (
     <>
       <Container className="mt-9">
