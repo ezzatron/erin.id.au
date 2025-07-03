@@ -1,7 +1,7 @@
 import { Providers } from "@/app/providers";
 import { Layout } from "@/components/Layout";
-import "@/styles/tailwind.css";
 import { type Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
