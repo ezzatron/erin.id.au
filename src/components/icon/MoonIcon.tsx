@@ -1,4 +1,3 @@
-"use client";
 export function MoonIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>

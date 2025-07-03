@@ -1,4 +1,3 @@
-"use client";
 export function SunIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
