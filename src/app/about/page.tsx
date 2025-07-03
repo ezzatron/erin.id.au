@@ -1,14 +1,13 @@
 import { Container } from "@/components/Container";
+import { BlueskyIcon } from "@/components/icon/BlueskyIcon";
 import { GitHubIcon } from "@/components/icon/GitHubIcon";
-import { InstagramIcon } from "@/components/icon/InstagramIcon";
 import { LinkedInIcon } from "@/components/icon/LinkedInIcon";
-import { XIcon } from "@/components/icon/XIcon";
 import portraitImage from "@/images/portrait.jpg";
 import clsx from "clsx";
+import { MailIcon } from "lucide-react";
 import { type Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { MailIcon } from "../../components/icon/MailIcon";
 
 function SocialLink({
   className,
@@ -27,7 +26,7 @@ function SocialLink({
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <Icon className="size-6 flex-none text-zinc-500 transition group-hover:text-teal-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -90,17 +89,14 @@ export default function About() {
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="#" icon={XIcon}>
-              Follow on X
-            </SocialLink>
-            <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-              Follow on Instagram
-            </SocialLink>
-            <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+            <SocialLink href="#" icon={GitHubIcon}>
               Follow on GitHub
             </SocialLink>
             <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
               Follow on LinkedIn
+            </SocialLink>
+            <SocialLink href="#" icon={BlueskyIcon} className="mt-4">
+              Follow on Bluesky
             </SocialLink>
             <SocialLink
               href="mailto:spencer@planetaria.tech"

@@ -1,16 +1,15 @@
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
+import { BlueskyIcon } from "@/components/icon/BlueskyIcon";
 import { GitHubIcon } from "@/components/icon/GitHubIcon";
-import { InstagramIcon } from "@/components/icon/InstagramIcon";
 import { LinkedInIcon } from "@/components/icon/LinkedInIcon";
-import { XIcon } from "@/components/icon/XIcon";
 import logoAirbnb from "@/images/logos/airbnb.svg";
 import logoFacebook from "@/images/logos/facebook.svg";
 import logoPlanetaria from "@/images/logos/planetaria.svg";
 import logoStarbucks from "@/images/logos/starbucks.svg";
+import { ArrowDownIcon } from "lucide-react";
 import Image, { type ImageProps } from "next/image";
 import Link from "next/link";
-import { ArrowDownIcon } from "../components/icon/ArrowDownIcon";
 import { BriefcaseIcon } from "../components/icon/BriefcaseIcon";
 
 function SocialLink({
@@ -21,7 +20,7 @@ function SocialLink({
 }) {
   return (
     <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+      <Icon className="size-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   );
 }
@@ -45,8 +44,8 @@ function Role({ role }: { role: Role }) {
 
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+      <div className="relative mt-1 flex size-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+        <Image src={role.logo} alt="" className="size-7" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
@@ -109,7 +108,7 @@ function Resume() {
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <BriefcaseIcon className="size-6 flex-none fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500" />
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
@@ -119,7 +118,10 @@ function Resume() {
       </ol>
       <Button href="#" variant="secondary" className="group mt-6 w-full">
         Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        <ArrowDownIcon
+          strokeWidth={2}
+          className="size-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
+        />
       </Button>
     </div>
   );
@@ -140,12 +142,6 @@ export default async function Home() {
             own terms.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink href="#" aria-label="Follow on X" icon={XIcon} />
-            <SocialLink
-              href="#"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
             <SocialLink
               href="#"
               aria-label="Follow on GitHub"
@@ -155,6 +151,11 @@ export default async function Home() {
               href="#"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
+            />
+            <SocialLink
+              href="#"
+              aria-label="Follow on Bluesky"
+              icon={BlueskyIcon}
             />
           </div>
         </div>
