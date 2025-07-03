@@ -1,4 +1,6 @@
-export function GitHubIcon(props: React.ComponentPropsWithoutRef<"svg">) {
+import type { ComponentPropsWithoutRef } from "react";
+
+export function GitHubIcon(props: ComponentPropsWithoutRef<"svg">) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" {...props}>
       <path

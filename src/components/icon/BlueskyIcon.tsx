@@ -1,4 +1,6 @@
-export function BlueskyIcon(props: React.ComponentPropsWithoutRef<"svg">) {
+import type { ComponentPropsWithoutRef } from "react";
+
+export function BlueskyIcon(props: ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       viewBox="-80 -104 688 664"

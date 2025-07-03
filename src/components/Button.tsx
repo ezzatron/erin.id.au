@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Link from "next/link";
+import type { ComponentPropsWithoutRef } from "react";
 
 const variantStyles = {
   primary:
@@ -11,8 +12,8 @@ const variantStyles = {
 type ButtonProps = {
   variant?: keyof typeof variantStyles;
 } & (
-  | (React.ComponentPropsWithoutRef<"button"> & { href?: undefined })
-  | React.ComponentPropsWithoutRef<typeof Link>
+  | (ComponentPropsWithoutRef<"button"> & { href?: undefined })
+  | ComponentPropsWithoutRef<typeof Link>
 );
 
 export function Button({

@@ -8,6 +8,7 @@ import { MailIcon } from "lucide-react";
 import { type Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import type { ComponentType, ReactNode } from "react";
 
 function SocialLink({
   className,
@@ -17,8 +18,8 @@ function SocialLink({
 }: {
   className?: string;
   href: string;
-  icon: React.ComponentType<{ className?: string }>;
-  children: React.ReactNode;
+  icon: ComponentType<{ className?: string }>;
+  children: ReactNode;
 }) {
   return (
     <li className={clsx(className, "flex")}>

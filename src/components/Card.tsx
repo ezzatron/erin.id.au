@@ -1,11 +1,12 @@
 import clsx from "clsx";
 import Link from "next/link";
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
-export function Card<T extends React.ElementType = "div">({
+export function Card<T extends ElementType = "div">({
   as,
   className,
   children,
-}: Omit<React.ComponentPropsWithoutRef<T>, "as" | "className"> & {
+}: Omit<ComponentPropsWithoutRef<T>, "as" | "className"> & {
   as?: T;
   className?: string;
 }) {
@@ -23,7 +24,7 @@ export function Card<T extends React.ElementType = "div">({
 Card.Link = function CardLink({
   children,
   ...props
-}: React.ComponentPropsWithoutRef<typeof Link>) {
+}: ComponentPropsWithoutRef<typeof Link>) {
   return (
     <>
       <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
@@ -38,7 +39,7 @@ Card.Link = function CardLink({
 Card.Description = function CardDescription({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">

@@ -10,13 +10,14 @@ import logoStarbucks from "@/images/logos/starbucks.svg";
 import { ArrowDownIcon } from "lucide-react";
 import Image, { type ImageProps } from "next/image";
 import Link from "next/link";
+import type { ComponentPropsWithoutRef, ComponentType } from "react";
 import { BriefcaseIcon } from "../components/icon/BriefcaseIcon";
 
 function SocialLink({
   icon: Icon,
   ...props
-}: React.ComponentPropsWithoutRef<typeof Link> & {
-  icon: React.ComponentType<{ className?: string }>;
+}: ComponentPropsWithoutRef<typeof Link> & {
+  icon: ComponentType<{ className?: string }>;
 }) {
   return (
     <Link className="group -m-1 p-1" {...props}>

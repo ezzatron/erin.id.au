@@ -1,13 +1,8 @@
 import { ContainerInner, ContainerOuter } from "@/components/Container";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
-function NavLink({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
+function NavLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link
       href={href}

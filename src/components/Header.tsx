@@ -14,7 +14,15 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ComponentPropsWithoutRef,
+  type ComponentRef,
+  type CSSProperties,
+  type ReactNode,
+} from "react";
 import { MoonIcon } from "./icon/MoonIcon";
 import { SunIcon } from "./icon/SunIcon";
 
@@ -23,7 +31,7 @@ function MobileNavItem({
   children,
 }: {
   href: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <li>
@@ -34,9 +42,7 @@ function MobileNavItem({
   );
 }
 
-function MobileNavigation(
-  props: React.ComponentPropsWithoutRef<typeof Popover>,
-) {
+function MobileNavigation(props: ComponentPropsWithoutRef<typeof Popover>) {
   return (
     <Popover {...props}>
       <PopoverButton className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
@@ -74,13 +80,7 @@ function MobileNavigation(
   );
 }
 
-function NavItem({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
+function NavItem({ href, children }: { href: string; children: ReactNode }) {
   const isActive = usePathname() === href;
 
   return (
@@ -103,7 +103,7 @@ function NavItem({
   );
 }
 
-function DesktopNavigation(props: React.ComponentPropsWithoutRef<"nav">) {
+function DesktopNavigation(props: ComponentPropsWithoutRef<"nav">) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
@@ -145,7 +145,7 @@ function clamp(number: number, a: number, b: number) {
 function AvatarContainer({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<"div">) {
+}: ComponentPropsWithoutRef<"div">) {
   return (
     <div
       className={clsx(
@@ -161,7 +161,7 @@ function Avatar({
   large = false,
   className,
   ...props
-}: Omit<React.ComponentPropsWithoutRef<typeof Link>, "href"> & {
+}: Omit<ComponentPropsWithoutRef<typeof Link>, "href"> & {
   large?: boolean;
 }) {
   return (
@@ -188,8 +188,8 @@ function Avatar({
 export function Header() {
   const isHomePage = usePathname() === "/";
 
-  const headerRef = useRef<React.ElementRef<"div">>(null);
-  const avatarRef = useRef<React.ElementRef<"div">>(null);
+  const headerRef = useRef<ComponentRef<"div">>(null);
+  const avatarRef = useRef<ComponentRef<"div">>(null);
   const isInitial = useRef(true);
 
   useEffect(() => {
@@ -310,15 +310,14 @@ export function Header() {
             <Container
               className="top-0 order-last -mb-3 pt-3"
               style={{
-                position:
-                  "var(--header-position)" as React.CSSProperties["position"],
+                position: "var(--header-position)" as CSSProperties["position"],
               }}
             >
               <div
                 className="top-(--avatar-top,--spacing(3)) w-full"
                 style={{
                   position:
-                    "var(--header-inner-position)" as React.CSSProperties["position"],
+                    "var(--header-inner-position)" as CSSProperties["position"],
                 }}
               >
                 <div className="relative">
@@ -343,15 +342,14 @@ export function Header() {
           ref={headerRef}
           className="top-0 z-10 h-16 pt-6"
           style={{
-            position:
-              "var(--header-position)" as React.CSSProperties["position"],
+            position: "var(--header-position)" as CSSProperties["position"],
           }}
         >
           <Container
             className="top-(--header-top,--spacing(6)) w-full"
             style={{
               position:
-                "var(--header-inner-position)" as React.CSSProperties["position"],
+                "var(--header-inner-position)" as CSSProperties["position"],
             }}
           >
             <div className="relative flex gap-4">

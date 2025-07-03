@@ -1,4 +1,6 @@
-export function SunIcon(props: React.ComponentPropsWithoutRef<"svg">) {
+import type { ComponentPropsWithoutRef } from "react";
+
+export function SunIcon(props: ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       viewBox="0 0 24 24"
