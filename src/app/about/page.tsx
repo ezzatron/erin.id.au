@@ -14,7 +14,7 @@ import type { ComponentType, ReactNode } from "react";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "I’m Spencer Sharp. I live in New York City, where I design the future.",
+    "Hi! I'm Erin, and I've been making software for 20+ years. I have a proven track record of building and leading outstanding dev teams. My passion, dedication to quality, technical knowledge, and people skills have helped produce software that is both loved by users, and a joy to work on for the devs I work with.",
 };
 
 export default function AboutPage() {
@@ -33,35 +33,37 @@ export default function AboutPage() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I’m Spencer Sharp. I live in New York City, where I design the
-            future.
+            Making software for the love of it 💝
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I’ve loved making things for as long as I can remember, and wrote
-              my first program when I was 6 years old, just two weeks after my
-              mom brought home the brand new Macintosh LC 550 that I taught
-              myself to type on.
+              Hi! I&apos;m Erin, and I&apos;ve been making software for 20+
+              years.
             </p>
             <p>
-              The only thing I loved more than computers as a kid was space.
-              When I was 8, I climbed the 40-foot oak tree at the back of our
-              yard while wearing my older sister’s motorcycle helmet, counted
-              down from three, and jumped — hoping the tree was tall enough that
-              with just a bit of momentum I’d be able to get to orbit.
+              I have a proven track record of building and leading outstanding
+              dev teams. My passion, dedication to quality, technical knowledge,
+              and people skills have helped produce software that is both loved
+              by users, and a joy to work on for the devs I work with.
             </p>
             <p>
-              I spent the next few summers indoors working on a rocket design,
-              while I recovered from the multiple surgeries it took to fix my
-              badly broken legs. It took nine iterations, but when I was 15 I
-              sent my dad’s Blackberry into orbit and was able to transmit a
-              photo back down to our family computer from space.
+              I have a broad range of experience, particularly focused around
+              front-end technologies, web apps, and user experience design, but
+              also library, SDK, and tool development. I&apos;m also very
+              passionate about the way in which software gets made — team
+              structures, processes, tooling, and developer experience.
             </p>
             <p>
-              Today, I’m the founder of Planetaria, where we’re working on
-              civilian space suits and manned shuttle kits you can assemble at
-              home so that the next generation of kids really <em>can</em> make
-              it to orbit — from the comfort of their own backyards.
+              In addition to my professional work, I keep my own skills sharp by
+              creating and contributing to a large variety of open source{" "}
+              <Link
+                href="/projects"
+                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+              >
+                projects
+              </Link>
+              . This allows me to hone my craft, keep up-to-date with the latest
+              tech, and bring a wealth of fresh ideas to the table.
             </p>
           </div>
         </div>
@@ -88,21 +90,29 @@ export default function AboutPage() {
           </div>
 
           <ul role="list">
-            <SocialLink href="mailto:spencer@planetaria.tech" icon={MailIcon}>
-              spencer@planetaria.tech
+            <SocialLink href="mailto:contact@erin.id.au" icon={MailIcon}>
+              contact@erin.id.au
             </SocialLink>
 
             <SocialLink
-              href="#"
+              href="https://github.com/ezzatron"
               icon={GitHubIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
               Follow on GitHub
             </SocialLink>
-            <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+            <SocialLink
+              href="https://www.linkedin.com/in/ezzatron"
+              icon={LinkedInIcon}
+              className="mt-4"
+            >
               Follow on LinkedIn
             </SocialLink>
-            <SocialLink href="#" icon={BlueskyIcon} className="mt-4">
+            <SocialLink
+              href="https://bsky.app/profile/ezzatron.bsky.social"
+              icon={BlueskyIcon}
+              className="mt-4"
+            >
               Follow on Bluesky
             </SocialLink>
           </ul>

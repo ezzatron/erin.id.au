@@ -6,12 +6,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s - Spencer Sharp",
-    default:
-      "Spencer Sharp - Software designer, founder, and amateur astronaut",
+    template: "%s - Erin Millard-Wright",
+    default: "Erin Millard-Wright - Making software for the love of it 💝",
   },
   description:
-    "I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.",
+    "Hi! I'm Erin, and I've been making software for 20+ years. I have a proven track record of building and leading outstanding dev teams. My passion, dedication to quality, technical knowledge, and people skills have helped produce software that is both loved by users, and a joy to work on for the devs I work with.",
 };
 
 export default async function RootLayout({
