@@ -1,4 +1,5 @@
 import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
 
 const isCI = process.env.CI === "true";
@@ -12,7 +13,7 @@ const browserOptions = {
 } as const;
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [tsconfigPaths(), react()],
   publicDir: "artifacts/vitest/browser/public",
   define: {
     "process.env": JSON.stringify({}),

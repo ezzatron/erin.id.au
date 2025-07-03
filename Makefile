@@ -30,7 +30,7 @@ precommit:: verify-generated
 # run --- Run the app in development mode.
 .PHONY: run
 run: artifacts/link-dependencies.touch
-	$(JS_EXEC) next dev --turbo --port 3000
+	$(JS_EXEC) next dev --port 3000
 
 # run-dist --- Run the app in production mode.
 .PHONY: run-dist

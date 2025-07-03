@@ -1,53 +1,52 @@
-import { type Metadata } from 'next'
-import Image from 'next/image'
-
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import { Card } from "@/components/Card";
+import { SimpleLayout } from "@/components/SimpleLayout";
+import logoAnimaginary from "@/images/logos/animaginary.svg";
+import logoCosmos from "@/images/logos/cosmos.svg";
+import logoHelioStream from "@/images/logos/helio-stream.svg";
+import logoOpenShuttle from "@/images/logos/open-shuttle.svg";
+import logoPlanetaria from "@/images/logos/planetaria.svg";
+import { type Metadata } from "next";
+import Image from "next/image";
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: "Planetaria",
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+      "Creating technology to empower civilians to explore space on their own terms.",
+    link: { href: "http://planetaria.tech", label: "planetaria.tech" },
     logo: logoPlanetaria,
   },
   {
-    name: 'Animaginary',
+    name: "Animaginary",
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
+      "High performance web animation library, hand-written in optimized WASM.",
+    link: { href: "#", label: "github.com" },
     logo: logoAnimaginary,
   },
   {
-    name: 'HelioStream',
+    name: "HelioStream",
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
+      "Real-time video streaming library, optimized for interstellar transmission.",
+    link: { href: "#", label: "github.com" },
     logo: logoHelioStream,
   },
   {
-    name: 'cosmOS',
+    name: "cosmOS",
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
+      "The operating system that powers our Planetaria space shuttles.",
+    link: { href: "#", label: "github.com" },
     logo: logoCosmos,
   },
   {
-    name: 'OpenShuttle',
+    name: "OpenShuttle",
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
+      "The schematics for the first rocket I designed that successfully made it to orbit.",
+    link: { href: "#", label: "github.com" },
     logo: logoOpenShuttle,
   },
-]
+];
 
-function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function LinkIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -55,13 +54,13 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
 export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
-}
+  title: "Projects",
+  description: "Things I’ve made trying to put my dent in the universe.",
+};
 
 export default function Projects() {
   return (
@@ -95,5 +94,5 @@ export default function Projects() {
         ))}
       </ul>
     </SimpleLayout>
-  )
+  );
 }

@@ -1,8 +1,7 @@
-import { type Metadata } from 'next'
-
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { Card } from "@/components/Card";
+import { Section } from "@/components/Section";
+import { SimpleLayout } from "@/components/SimpleLayout";
+import { type Metadata } from "next";
 
 function SpeakingSection({
   children,
@@ -12,7 +11,7 @@ function SpeakingSection({
     <Section {...props}>
       <div className="space-y-16">{children}</div>
     </Section>
-  )
+  );
 }
 
 function Appearance({
@@ -22,11 +21,11 @@ function Appearance({
   cta,
   href,
 }: {
-  title: string
-  description: string
-  event: string
-  cta: string
-  href: string
+  title: string;
+  description: string;
+  event: string;
+  cta: string;
+  href: string;
 }) {
   return (
     <Card as="article">
@@ -37,14 +36,14 @@ function Appearance({
       <Card.Description>{description}</Card.Description>
       <Card.Cta>{cta}</Card.Cta>
     </Card>
-  )
+  );
 }
 
 export const metadata: Metadata = {
-  title: 'Speaking',
+  title: "Speaking",
   description:
-    'I’ve spoken at events all around the world and been interviewed for many podcasts.',
-}
+    "I’ve spoken at events all around the world and been interviewed for many podcasts.",
+};
 
 export default function Speaking() {
   return (
@@ -94,5 +93,5 @@ export default function Speaking() {
         </SpeakingSection>
       </div>
     </SimpleLayout>
-  )
+  );
 }

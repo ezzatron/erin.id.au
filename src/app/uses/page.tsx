@@ -1,6 +1,6 @@
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { Card } from "@/components/Card";
+import { Section } from "@/components/Section";
+import { SimpleLayout } from "@/components/SimpleLayout";
 
 function ToolsSection({
   children,
@@ -12,7 +12,7 @@ function ToolsSection({
         {children}
       </ul>
     </Section>
-  )
+  );
 }
 
 function Tool({
@@ -20,9 +20,9 @@ function Tool({
   href,
   children,
 }: {
-  title: string
-  href?: string
-  children: React.ReactNode
+  title: string;
+  href?: string;
+  children: React.ReactNode;
 }) {
   return (
     <Card as="li">
@@ -31,13 +31,13 @@ function Tool({
       </Card.Title>
       <Card.Description>{children}</Card.Description>
     </Card>
-  )
+  );
 }
 
 export const metadata = {
-  title: 'Uses',
-  description: 'Software I use, gadgets I love, and other things I recommend.',
-}
+  title: "Uses",
+  description: "Software I use, gadgets I love, and other things I recommend.",
+};
 
 export default function Uses() {
   return (
@@ -119,5 +119,5 @@ export default function Uses() {
         </ToolsSection>
       </div>
     </SimpleLayout>
-  )
+  );
 }
