@@ -5,6 +5,13 @@ export default createConfig({
   distDir: "artifacts/next/dist",
   output: "standalone",
   reactStrictMode: true,
+  redirects: async () => [
+    {
+      source: "/",
+      destination: "/about",
+      permanent: false,
+    },
+  ],
 });
 
 function createConfig(config: NextConfig): NextConfig {
