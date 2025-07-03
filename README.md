@@ -6,7 +6,6 @@ _Source for [erin.id.au]_
 
 ## TODO
 
-- Replace avatar animation with CSS animation
 - Tidy up props types
 - Get rid of refs everywhere
 - Simplify icon props
