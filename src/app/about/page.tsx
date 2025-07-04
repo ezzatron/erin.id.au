@@ -73,18 +73,10 @@ export default function AboutPage() {
 
         <div className="flex flex-col gap-16 lg:pl-20">
           <div className="flex flex-col gap-4">
-            <LinkButton href="#TODO" variant="primary" className="group w-full">
-              Download CV
-              <ArrowDownIcon
-                strokeWidth={2}
-                className="size-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
-              />
-            </LinkButton>
-
             <LinkButton
               download
+              primary
               href="/Erin%20Millard-Wright.vcf"
-              variant="secondary"
               className="group w-full"
             >
               Download contact
