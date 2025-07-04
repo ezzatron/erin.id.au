@@ -6,5 +6,6 @@ _Source for [erin.id.au]_
 
 ## TODO
 
+- Open Graph
 - CV page
 - CV PDF
