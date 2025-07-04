@@ -31,12 +31,12 @@
 
 @custom-variant dark {
   @media (prefers-color-scheme: dark) {
-    html:not(html[data-theme~="light"]) & {
+    :where(html:not(html[data-theme~="light"])) & {
       @slot;
     }
   }
 
-  html[data-theme~="dark"] & {
+  :where(html[data-theme~="dark"]) & {
     @slot;
   }
 }
