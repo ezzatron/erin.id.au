@@ -30,8 +30,8 @@ export default function ProjectsPage() {
 
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
           I&apos;ve been making and contributing to open-source projects for 10+
-          years. This is a small selection of some of my favorites — in various
-          stages of completeness.
+          years. This is a small selection of my favorites, past and present —
+          in various stages of completeness.
         </p>
       </header>
 
