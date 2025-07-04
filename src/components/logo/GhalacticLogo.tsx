@@ -2,6 +2,8 @@ export function GhalacticLogo() {
   return (
     <svg
       viewBox="18 18 72 72"
+      width={54}
+      height={54}
       xmlSpace="preserve"
       style={{
         fillRule: "evenodd",
