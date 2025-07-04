@@ -6,8 +6,6 @@ _Source for [erin.id.au]_
 
 ## TODO
 
-- Tidy up props types
-- Get rid of refs everywhere
-- Simplify icon props
-- Replace image assets
-- Replace copy
+- CV page
+- CV PDF
+- Broken link detection

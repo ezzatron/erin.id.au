@@ -58,7 +58,7 @@ export default function AboutPage() {
             </p>
             <p>
               In addition to my professional work, I keep my own skills sharp by
-              creating and contributing to a large variety of open source{" "}
+              creating and contributing to a large variety of open-source{" "}
               <Link
                 href="/projects"
                 className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
@@ -107,7 +107,7 @@ export default function AboutPage() {
               Follow on GitHub
             </SocialLink>
             <SocialLink
-              href="https://www.linkedin.com/in/ezzatron"
+              href="https://linkedin.com/in/ezzatron"
               icon={LinkedInIcon}
               className="mt-4"
             >
