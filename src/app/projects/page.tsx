@@ -1,4 +1,3 @@
-import { Card } from "@/components/Card";
 import { SimpleLayout } from "@/components/SimpleLayout";
 import logoAnimaginary from "@/images/logos/animaginary.svg";
 import logoCosmos from "@/images/logos/cosmos.svg";
@@ -8,6 +7,7 @@ import logoPlanetaria from "@/images/logos/planetaria.svg";
 import { LinkIcon } from "lucide-react";
 import { type Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -71,21 +71,27 @@ function Project({
   logo: string;
 }) {
   return (
-    <Card as="li">
+    <li className="group relative flex flex-col items-start">
       <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={logo} alt={`${name} logo`} className="size-8" unoptimized />
       </div>
 
       <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-        <Card.Link href={link.href}>{name}</Card.Link>
+        <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
+        <Link href={link.href}>
+          <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+          <span className="relative z-10">{name}</span>
+        </Link>
       </h2>
 
-      <Card.Description>{description}</Card.Description>
+      <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        {description}
+      </p>
 
       <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
         <LinkIcon strokeWidth={2.5} className="m-1 size-4 flex-none" />
         <span className="ml-2">{link.label}</span>
       </p>
-    </Card>
+    </li>
   );
 }
