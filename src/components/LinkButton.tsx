@@ -7,6 +7,7 @@ type Props = {
   variant: "primary" | "secondary";
   children: ReactNode;
   className?: string;
+  download?: boolean;
 };
 
 export function LinkButton({
@@ -14,6 +15,7 @@ export function LinkButton({
   variant = "primary",
   children,
   className,
+  download,
 }: Props) {
   className = clsx(
     className,
@@ -27,7 +29,7 @@ export function LinkButton({
   );
 
   return (
-    <Link href={href} className={className}>
+    <Link download={download} href={href} className={className}>
       {children}
     </Link>
   );

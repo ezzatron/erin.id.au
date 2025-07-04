@@ -1,5 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const isCI = process.env.CI === "true";
 const isDefaultProjects =
   process.argv.some((a) => a === "test") &&
   !process.argv.some((a) => a.match(/^--project\b/));
@@ -12,6 +13,7 @@ export default defineConfig({
   outputDir: "artifacts/playwright/output",
   fullyParallel: true,
   retries: 1,
+  timeout: isCI ? 30_000 : 10_000,
   reporter: [
     ["dot"],
     [
@@ -50,6 +52,14 @@ export default defineConfig({
           {
             name: "webkit",
             use: { ...devices["Desktop Safari"] },
+          },
+          {
+            name: "links",
+            testDir: "test/links",
+            timeout: isCI ? 300_000 : 30_000,
+            retries: 0,
+            snapshotPathTemplate: "{testDir}/{arg}{ext}",
+            use: { ...devices["Desktop Chrome"] },
           },
         ]),
   ],

@@ -8,4 +8,3 @@ _Source for [erin.id.au]_
 
 - CV page
 - CV PDF
-- Broken link detection

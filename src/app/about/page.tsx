@@ -82,6 +82,7 @@ export default function AboutPage() {
             </LinkButton>
 
             <LinkButton
+              download
               href="/Erin%20Millard-Wright.vcf"
               variant="secondary"
               className="group w-full"

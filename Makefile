@@ -14,8 +14,8 @@ JS_VITEST_REQ += playwright-install
 ################################################################################
 
 # Configure Playwright test projects to run for each target
-ci:: JS_PLAYWRIGHT_TEST_PROJECTS ?= chromium firefox webkit
-precommit:: JS_PLAYWRIGHT_TEST_PROJECTS ?= chromium firefox webkit
+ci:: JS_PLAYWRIGHT_TEST_PROJECTS ?= chromium firefox webkit links
+precommit:: JS_PLAYWRIGHT_TEST_PROJECTS ?= chromium firefox webkit links
 
 # Configure Vitest projects to run for each target
 ci:: JS_VITEST_PROJECTS ?= chromium firefox webkit
@@ -24,6 +24,10 @@ precommit:: JS_VITEST_PROJECTS ?= chromium firefox webkit
 # Verify generated files on precommit
 .PHONY: precommit
 precommit:: verify-generated
+
+# Generate the links snapshot
+.PHONY: generate-links
+generate-links: test/links/links.json
 
 ################################################################################
 
@@ -51,3 +55,6 @@ artifacts/dist: artifacts/next/dist/BUILD_ID $(JS_SOURCE_FILES) $(shell find pub
 	mkdir -p "$@/artifacts/next/dist/cache" && cp -a artifacts/next/dist/cache/* "$@/artifacts/next/dist/cache"
 	mkdir -p "$@/artifacts/next/dist/static" && cp -a artifacts/next/dist/static/* "$@/artifacts/next/dist/static"
 	cp -a public "$@/"
+
+test/links/links.json: artifacts/link-dependencies.touch $(JS_SOURCE_FILES) $(filter-out test/links/links.json,$(JS_TEST_FILES))
+	$(JS_EXEC) playwright test --project=links --update-snapshots
