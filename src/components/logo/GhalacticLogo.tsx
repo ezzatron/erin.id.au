@@ -1,9 +1,9 @@
-export function GhalacticLogo() {
+import type { ComponentPropsWithoutRef } from "react";
+
+export function GhalacticLogo(props: ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       viewBox="18 18 72 72"
-      width={54}
-      height={54}
       xmlSpace="preserve"
       style={{
         fillRule: "evenodd",
@@ -13,6 +13,7 @@ export function GhalacticLogo() {
         strokeMiterlimit: 1.5,
       }}
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <path
         d="M93.473 199.938v35.917"

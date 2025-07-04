@@ -42,7 +42,7 @@ export default function ProjectsPage() {
         >
           <Project
             name="Ghalactic Actions"
-            logo={<GhalacticLogo />}
+            logo={<GhalacticLogo className="w-full" />}
             period="2021 — Present"
             link={{
               href: "https://ghalactic.github.io",
@@ -59,12 +59,12 @@ export default function ProjectsPage() {
           <Project
             name="Dogma"
             period="2021 — 2022 (Contributor)"
-            logo={<DogmatiqLogo />}
+            logo={<DogmatiqLogo className="w-full" />}
             link={{
               href: "https://github.com/dogmatiq/dogma",
               label: "dogmatiq/dogma",
             }}
-            linkIcon={<GitHubIcon />}
+            linkIcon={<GitHubIcon className="w-full" />}
           >
             <p>
               A comprehensive suite of tools for building robust message-driven
@@ -80,7 +80,7 @@ export default function ProjectsPage() {
               href: "https://github.com/ezzatron/austenite",
               label: "ezzatron/austenite",
             }}
-            linkIcon={<GitHubIcon />}
+            linkIcon={<GitHubIcon className="w-full" />}
           >
             <p>
               Allows TypeScript micro-services to use code to declare the
@@ -96,7 +96,7 @@ export default function ProjectsPage() {
               href: "https://github.com/ezzatron/nvector-js",
               label: "ezzatron/nvector-js",
             }}
-            linkIcon={<GitHubIcon />}
+            linkIcon={<GitHubIcon className="w-full" />}
           >
             <p>
               Lightweight TypeScript library for dealing with n-vectors, an
@@ -112,7 +112,7 @@ export default function ProjectsPage() {
               href: "https://github.com/ezzatron/nvector-go",
               label: "ezzatron/nvector-go",
             }}
-            linkIcon={<GitHubIcon />}
+            linkIcon={<GitHubIcon className="w-full" />}
           >
             <p>
               Lightweight Go library for dealing with n-vectors, an alternative
@@ -128,7 +128,7 @@ export default function ProjectsPage() {
               href: "https://github.com/ezzatron/fake-geolocation",
               label: "ezzatron/fake-geolocation",
             }}
-            linkIcon={<GitHubIcon />}
+            linkIcon={<GitHubIcon className="w-full" />}
           >
             <p>
               Testing library that allows you to simulate real-world W3C
@@ -144,7 +144,7 @@ export default function ProjectsPage() {
               href: "https://github.com/ezzatron/fake-permissions",
               label: "ezzatron/fake-permissions",
             }}
-            linkIcon={<GitHubIcon />}
+            linkIcon={<GitHubIcon className="w-full" />}
           >
             <p>
               Testing library that allows you to simulate real-world W3C
