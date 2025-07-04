@@ -1,8 +1,8 @@
-import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { BlueskyIcon } from "@/components/icon/BlueskyIcon";
 import { GitHubIcon } from "@/components/icon/GitHubIcon";
 import { LinkedInIcon } from "@/components/icon/LinkedInIcon";
+import { LinkButton } from "@/components/LinkButton";
 import portraitImage from "@/images/portrait.jpg";
 import clsx from "clsx";
 import { ArrowDownIcon, MailIcon } from "lucide-react";
@@ -32,10 +32,12 @@ export default function AboutPage() {
             />
           </div>
         </div>
+
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Making software for the love of it 💝
           </h1>
+
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
               Hi! I&apos;m Erin, and I&apos;ve been making software for 20+
@@ -68,16 +70,18 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
+
         <div className="flex flex-col gap-16 lg:pl-20">
           <div className="flex flex-col gap-4">
-            <Button href="#TODO" variant="primary" className="group w-full">
+            <LinkButton href="#TODO" variant="primary" className="group w-full">
               Download CV
               <ArrowDownIcon
                 strokeWidth={2}
                 className="size-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
               />
-            </Button>
-            <Button
+            </LinkButton>
+
+            <LinkButton
               href="/Erin%20Millard-Wright.vcf"
               variant="secondary"
               className="group w-full"
@@ -87,7 +91,7 @@ export default function AboutPage() {
                 strokeWidth={2}
                 className="size-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
               />
-            </Button>
+            </LinkButton>
           </div>
 
           <ul role="list">

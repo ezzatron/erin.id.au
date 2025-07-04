@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     "Hi! I'm Erin, and I've been making software for 20+ years. I have a proven track record of building and leading outstanding dev teams. My passion, dedication to quality, technical knowledge, and people skills have helped produce software that is both loved by users, and a joy to work on for the devs I work with.",
 };
 
-export default async function RootLayout({
-  children,
-}: {
+type Props = {
   children: ReactNode;
-}) {
+};
+
+export default async function RootLayout({ children }: Props) {
   const theme = await readTheme();
 
   return (
