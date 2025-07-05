@@ -11,7 +11,8 @@
           "referrers": [
             "",
             "about",
-            "projects"
+            "projects",
+            "resume"
           ]
         }
       ]
@@ -26,7 +27,8 @@
           "referrers": [
             "",
             "about",
-            "projects"
+            "projects",
+            "resume"
           ]
         }
       ]
@@ -41,6 +43,19 @@
           "referrers": [
             "",
             "about"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://erin.id.au/",
+      "ok": true,
+      "hashes": [
+        {
+          "hash": "",
+          "ok": true,
+          "referrers": [
+            "resume"
           ]
         }
       ]
@@ -173,7 +188,24 @@
           "referrers": [
             "",
             "about",
-            "projects"
+            "projects",
+            "resume"
+          ]
+        }
+      ]
+    },
+    {
+      "url": "resume",
+      "ok": true,
+      "hashes": [
+        {
+          "hash": "",
+          "ok": true,
+          "referrers": [
+            "",
+            "about",
+            "projects",
+            "resume"
           ]
         }
       ]

@@ -30,13 +30,15 @@
 }
 
 @custom-variant dark {
-  @media (prefers-color-scheme: dark) {
+  @media screen and (prefers-color-scheme: dark) {
     :where(html:not(html[data-theme~="light"])) & {
       @slot;
     }
   }
 
-  :where(html[data-theme~="dark"]) & {
-    @slot;
+  @media screen {
+    :where(html[data-theme~="dark"]) & {
+      @slot;
+    }
   }
 }

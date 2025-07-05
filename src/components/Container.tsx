@@ -16,15 +16,19 @@ export function Container({ children, className }: Props) {
 
 export function ContainerOuter({ className, children }: Props) {
   return (
-    <div className={clsx("sm:px-8", className)}>
-      <div className="mx-auto w-full max-w-7xl lg:px-8">{children}</div>
+    <div className={clsx("sm:px-8 print:px-0", className)}>
+      <div className="mx-auto w-full max-w-7xl lg:px-8 print:px-0">
+        {children}
+      </div>
     </div>
   );
 }
 
 export function ContainerInner({ className, children }: Props) {
   return (
-    <div className={clsx("relative px-4 sm:px-8 lg:px-12", className)}>
+    <div
+      className={clsx("relative px-4 sm:px-8 lg:px-12 print:px-0", className)}
+    >
       <div className="mx-auto max-w-2xl lg:max-w-5xl">{children}</div>
     </div>
   );

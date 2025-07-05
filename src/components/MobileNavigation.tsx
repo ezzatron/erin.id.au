@@ -43,6 +43,7 @@ export function MobileNavigation() {
           <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
             <NavItem href="/about">About</NavItem>
             <NavItem href="/projects">Projects</NavItem>
+            <NavItem href="/resume">Resume</NavItem>
           </ul>
         </nav>
       </PopoverPanel>
