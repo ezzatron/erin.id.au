@@ -5,7 +5,7 @@ import { LinkedInIcon } from "@/components/icon/LinkedInIcon";
 import { LinkButton } from "@/components/LinkButton";
 import portraitImage from "@/images/portrait.jpg";
 import clsx from "clsx";
-import { ArrowDownIcon, MailIcon } from "lucide-react";
+import { DownloadIcon, MailIcon } from "lucide-react";
 import { type Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -76,11 +76,25 @@ export default function AboutPage() {
             <LinkButton
               download
               primary
+              href="/Resume%20-%20Erin%20Millard-Wright.pdf"
+              className="group w-full"
+            >
+              Resume PDF
+              <DownloadIcon
+                aria-label="download"
+                strokeWidth={2}
+                className="size-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
+              />
+            </LinkButton>
+
+            <LinkButton
+              download
               href="/Erin%20Millard-Wright.vcf"
               className="group w-full"
             >
-              Download contact
-              <ArrowDownIcon
+              Contact details
+              <DownloadIcon
+                aria-label="download"
                 strokeWidth={2}
                 className="size-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
               />
