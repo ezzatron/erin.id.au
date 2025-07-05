@@ -7,9 +7,9 @@ export default function SocialImagePage() {
   if (process.env.NODE_ENV !== "development") notFound();
 
   return (
-    <div className="flex h-[100vh] items-stretch justify-between overflow-clip px-18 py-18">
-      <div className="flex flex-col justify-between">
-        <h1 className="text-6xl/16 font-bold tracking-tight text-zinc-800">
+    <div className="flex h-[100vh] items-stretch justify-between gap-24 overflow-clip px-24 py-18">
+      <div className="mt-4 flex flex-col justify-between">
+        <h1 className="text-5xl/12 font-bold tracking-tight text-zinc-800">
           Making software
           <br />
           for the love of it 💝
@@ -29,11 +29,11 @@ export default function SocialImagePage() {
         </div>
       </div>
 
-      <div className="flex-shrink-0">
+      <div>
         <Image
           src={portraitImage}
           alt=""
-          className="aspect-square size-full rotate-3 rounded-2xl bg-zinc-800 object-cover shadow-2xl"
+          className="h-full w-auto rotate-3 rounded-2xl bg-zinc-800 object-cover shadow-2xl"
           priority
         />
       </div>
