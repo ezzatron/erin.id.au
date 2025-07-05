@@ -31,7 +31,7 @@ export default defineConfig({
   webServer: envBaseURL
     ? undefined
     : {
-        command: "make run-playwright-test",
+        command: "make run-test",
         url: "http://localhost:7357/robots.txt",
         reuseExistingServer: false,
         timeout: 60 * 1000, // 60 seconds

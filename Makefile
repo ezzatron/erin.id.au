@@ -41,9 +41,9 @@ run: artifacts/link-dependencies.touch
 run-dist: artifacts/dist
 	NODE_ENV=production node artifacts/dist/run.mjs
 
-# run-playwright-test --- Run the app in order to run Playwright tests.
-.PHONY: run-playwright-test
-run-playwright-test: artifacts/link-dependencies.touch
+# run-test --- Run the app in order to run Playwright tests.
+.PHONY: run-test
+run-test: artifacts/link-dependencies.touch
 	$(JS_EXEC) next dev --port 7357
 
 ################################################################################

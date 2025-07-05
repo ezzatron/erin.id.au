@@ -1,4 +1,3 @@
-import { Layout } from "@/components/Layout";
 import { readTheme } from "@/theme/read-theme";
 import { type Metadata } from "next";
 import type { ReactNode } from "react";
@@ -22,9 +21,7 @@ export default async function RootLayout({ children }: Props) {
 
   return (
     <html lang="en" data-theme={theme}>
-      <body>
-        <Layout>{children}</Layout>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
