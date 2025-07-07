@@ -244,23 +244,17 @@ export default function ResumePage() {
             duration="4 years 7 months"
           >
             <li>
-              Collaborated with PHP teams to architect and deliver an internal
-              framework powering multiple high-traffic web applications, and
-              prototyped Angular-based apps that launched new product lines.
+              Led a team of PHP developers to design and develop an intranet
+              portal for a major German automotive manufacturer, meeting
+              rigorous business requirements. Acted as primary liaison for
+              multiple overseas clients, ensuring clear communication and
+              successful project delivery.
             </li>
             <li>
-              Standardized deployment processes by developing Capistrano-like
-              tooling and establishing Vagrant-based development environments,
-              both adopted company-wide.
-            </li>
-            <li>
-              Drove adoption of automated testing, achieving 100% test coverage
-              for the internal framework and creating a widely used PHP test
-              mock library.
-            </li>
-            <li>
-              Enhanced security by designing a custom PBKDF2-based binary
-              protocol for password hashing, implemented in both PHP and Java.
+              Served as primary maintainer for a complex German-language
+              manufacturing change management system in Perl. Engineered a
+              custom Java applet and protocol to enable secure, distributed file
+              transfers across a tightly controlled corporate network.
             </li>
           </Work>
         </div>
@@ -334,7 +328,7 @@ function Work({
       </p>
 
       <div className="mt-6 space-y-2 print:mt-4 print:text-[8pt]/[1.2em]">
-        <ul className="list-['–'] space-y-2 pl-2 text-zinc-700 *:pl-1 dark:text-zinc-400 print:space-y-0">
+        <ul className="list-['–'] space-y-2 pl-2 text-zinc-700 *:pl-1 dark:text-zinc-400 print:space-y-1">
           {children}
         </ul>
       </div>
