@@ -98,31 +98,52 @@ export default function ResumePage() {
           </div>
 
           <div className="mt-8 space-y-2 border-t-1 border-zinc-300 pt-8 text-zinc-700 dark:border-zinc-700 dark:text-zinc-400 print:text-[8pt]/[1.2em]">
-            <p>
-              I&apos;ve built things with TypeScript, JavaScript, React.js,
-              Next.js, App Router, Webpack, Node.js, Electron, HTML, CSS,
-              Tailwind, Go, gRPC, OpenAPI, JWTs, and Mapbox.
-            </p>
+            <p>Some personal projects in the testing space:</p>
 
-            <p>
-              I&apos;ve used Terraform, Docker, Kubernetes, AWS, EKS, GitHub
-              Actions, Playwright, Vitest, Jest, Git and Make to test, build,
-              and deploy software.
-            </p>
+            <OpenSource
+              title={
+                <>
+                  <Link href="https://github.com/ezzatron/fake-geolocation">
+                    <span className="whitespace-nowrap">fake-geolocation</span>
+                  </Link>{" "}
+                  +{" "}
+                  <Link href="https://github.com/ezzatron/fake-permissions">
+                    <span className="whitespace-nowrap">fake-permissions</span>
+                  </Link>
+                </>
+              }
+              subtitle={
+                <Link href="https://github.com/ezzatron/fake-geolocation">
+                  ezzatron/fake-geolocation
+                </Link>
+              }
+            >
+              <p>
+                Testing libraries that allow you to simulate complex and
+                UX-critical real-world W3C Geolocation and Permissions API
+                interactions.
+              </p>
+            </OpenSource>
 
-            <p>
-              I&apos;ve worked on web apps, PWAs, web-based desktop apps,
-              message-based apps, real-time apps, event-driven apps, APIs,
-              microservices, and geolocation systems.
-            </p>
-
-            <p>
-              I have skills in team leadership, technical leadership, strategic
-              planning, user experience, user interface design, developer
-              experience, system architecture, library design, protocol design,
-              test-driven development, mob programming, mentoring, code review,
-              presentations, and software documentation.
-            </p>
+            <OpenSource
+              title={
+                <>
+                  <Link href="https://web.archive.org/web/20220318071151/https:/eloquent-software.com/phony/latest/">
+                    Phony
+                  </Link>
+                </>
+              }
+              subtitle="2014 — 2023"
+            >
+              <p>
+                A ground-breaking PHP test mock library. Offered both OO-based
+                and function-based doubles. Used a clean separation between the
+                stubbing and verification phases of testing, inspired by
+                Mockito, which offered many benefits over the traditional
+                expect-run-verify approach that was common in incumbent mocking
+                libraries.
+              </p>
+            </OpenSource>
           </div>
 
           <div className="mt-8 hidden space-y-2 border-t-1 border-zinc-300 pt-8 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 print:block print:text-[8pt]/[1.2em]">
@@ -250,9 +271,14 @@ export default function ResumePage() {
           </Work>
 
           <p className="mt-6 print:text-[8pt]/[1.2em]">
-            ...and there&apos;s more! Check out my{" "}
-            <Link href="https://linkedin.com/in/ezzatron">LinkedIn</Link> for
-            older roles.
+            ...and there&apos;s more! Check{" "}
+            <Link
+              href="https://linkedin.com/in/ezzatron"
+              className="font-semibold"
+            >
+              linkedin.com/in/ezzatron
+            </Link>{" "}
+            for older roles.
           </p>
         </div>
       </div>
@@ -328,6 +354,32 @@ function Work({
         <ul className="list-['–'] space-y-2 pl-2 text-zinc-700 *:pl-1 dark:text-zinc-400 print:space-y-1">
           {children}
         </ul>
+      </div>
+    </div>
+  );
+}
+
+function OpenSource({
+  title,
+  subtitle,
+  children,
+}: {
+  title: ReactNode;
+  subtitle: ReactNode;
+  children: ReactNode;
+}) {
+  return (
+    <div className="mt-6">
+      <h3 className="text-lg/[1.4em] font-medium text-zinc-800 dark:text-zinc-100 print:text-[12pt]/[1em]">
+        {title}
+      </h3>
+
+      <p className="text-md/[1.2em] mt-1 text-zinc-600 dark:text-zinc-400 print:text-[10pt]/[1.2em]">
+        {subtitle}
+      </p>
+
+      <div className="space-y-2 print:mt-4 print:text-[8pt]/[1.2em]">
+        {children}
       </div>
     </div>
   );
