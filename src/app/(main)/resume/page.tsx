@@ -155,27 +155,31 @@ export default function ResumePage() {
               software-as-a-service platform in the regulatory compliance space.
             </li>
             <li>
-              Guided product and technical direction, designed processes and
-              team structures, and enabled teams to be effective within company
-              goals.
+              Developed bespoke testing utility libraries to enable simulation
+              of complex user interactions with browser geolocation and
+              permissions APIs, which were previously impossible to test, and
+              which resulted in drastic improvements to the user experience of
+              apps built with the BetSecure platform.
             </li>
             <li>
               Championed processes and ideas that created highly collaborative,
               autonomous, and effective cross-functional teams. Drove the
-              adoption of mob programming, which drastically improved quality,
-              reduced rework, eliminated siloing, and accelerated onboarding,
-              enabling new hires to make legitimate contributions on day one.
+              adoption of mob programming and test-driven development, which
+              drastically improved quality, reduced rework, eliminated siloing,
+              and accelerated onboarding, enabling new hires to make legitimate
+              contributions on day one.
             </li>
             <li>
-              Worked directly with teams to bootstrap projects and guide the
-              implementation of new features. Provided guidance and solutions to
-              overcome challenges as projects evolved.
+              Worked directly with teams to bootstrap projects, mentor team
+              members of various experience levels to improve their testing
+              practices and familiarity with modern browser-based E2E and
+              component testing tools.
             </li>
             <li>
               Personally wrote the majority of the public-facing documentation
               for the BetSecure platform, and developed content and style
               guidelines and custom tooling to ensure a world-class experience
-              for customers integrating with the platform.
+              for developers integrating with the platform.
             </li>
             <li>
               Fostered a culture of excellence and collaboration, enabling teams
@@ -196,15 +200,24 @@ export default function ResumePage() {
               legacy Java client to Electron-based desktop clients and PWAs.
             </li>
             <li>
-              Provided technical leadership through mentoring, code reviews, and
-              the development of internal tools, streamlining branding asset
-              production and release processes.
+              Developed internal tools to capture, transcribe, and analyze
+              long-running web socket sessions that used a custom legacy message
+              protocol, enabling developers to reverse-engineer and understand
+              the protocol so that it could be replaced with a more modern
+              solution.
+            </li>
+            <li>
+              Developed tooling to automate the generation of icons, open graph
+              images, startup images, app installer graphics, and other branding
+              assets for PWAs and desktop apps using a custom build system built
+              on top of Puppeteer&apos;s screenshot capabilities.
             </li>
             <li>
               Spearheaded the migration from jQuery and CoffeeScript to React
               and vanilla JavaScript, accelerating feature delivery and
               maintainability. Designed a custom WebSocket protocol for
-              real-time backend communication.
+              real-time backend communication. Provided technical leadership
+              through mentoring, code reviews, and pair programming.
             </li>
           </Work>
 
@@ -216,19 +229,19 @@ export default function ResumePage() {
             duration="5 years 1 month"
           >
             <li>
-              Collaborated with PHP teams to architect and deliver an internal
-              framework powering multiple high-traffic web applications, and
-              prototyped Angular-based apps that launched new product lines.
+              Drove adoption of automated testing, achieving 100% test coverage
+              for the internal framework and creating a widely used and
+              extensively documented open-source PHP test mock library.
             </li>
             <li>
               Standardized deployment processes by developing Capistrano-like
-              tooling and establishing Vagrant-based development environments,
-              both adopted company-wide.
+              tooling for web application deployments, and establishing
+              Vagrant-based development environments, both adopted company-wide.
             </li>
             <li>
-              Drove adoption of automated testing, achieving 100% test coverage
-              for the internal framework and creating a widely used PHP test
-              mock library.
+              Collaborated with PHP teams to architect and deliver an internal
+              framework powering multiple high-traffic web applications, and
+              prototyped Angular-based apps that launched new product lines.
             </li>
             <li>
               Enhanced security by designing a custom PBKDF2-based binary
@@ -236,27 +249,11 @@ export default function ResumePage() {
             </li>
           </Work>
 
-          <Work
-            role="Systems Analyst"
-            employer="I-Nex Corp"
-            endYear={2010}
-            startYear={2006}
-            duration="4 years 7 months"
-          >
-            <li>
-              Led a team of PHP developers to design and develop an intranet
-              portal for a major German automotive manufacturer, meeting
-              rigorous business requirements. Acted as primary liaison for
-              multiple overseas clients, ensuring clear communication and
-              successful project delivery.
-            </li>
-            <li>
-              Served as primary maintainer for a complex German-language
-              manufacturing change management system in Perl. Engineered a
-              custom Java applet and protocol to enable secure, distributed file
-              transfers across a tightly controlled corporate network.
-            </li>
-          </Work>
+          <p className="mt-6 print:text-[8pt]/[1.2em]">
+            ...and there&apos;s more! Check out my{" "}
+            <Link href="https://linkedin.com/in/ezzatron">LinkedIn</Link> for
+            older roles.
+          </p>
         </div>
       </div>
     </Container>
