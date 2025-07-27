@@ -121,7 +121,8 @@
           "hash": "",
           "ok": true,
           "referrers": [
-            "projects"
+            "projects",
+            "resume"
           ]
         }
       ]
@@ -134,7 +135,8 @@
           "hash": "",
           "ok": true,
           "referrers": [
-            "projects"
+            "projects",
+            "resume"
           ]
         }
       ]
@@ -173,7 +175,8 @@
           "hash": "",
           "ok": true,
           "referrers": [
-            "projects"
+            "projects",
+            "resume"
           ]
         }
       ]
