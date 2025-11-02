@@ -5,8 +5,7 @@ import {
   PopoverPanel,
 } from "@headlessui/react";
 import { ChevronDownIcon, XIcon } from "lucide-react";
-import Link from "next/link";
-import { type ReactNode } from "react";
+import { MobileNavItem } from "./MobileNavItem";
 
 export function MobileNavigation() {
   return (
@@ -41,22 +40,12 @@ export function MobileNavigation() {
 
         <nav className="mt-6">
           <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-            <NavItem href="/about">About</NavItem>
-            <NavItem href="/projects">Projects</NavItem>
-            <NavItem href="/resume">Resume</NavItem>
+            <MobileNavItem href="/about">About</MobileNavItem>
+            <MobileNavItem href="/projects">Projects</MobileNavItem>
+            <MobileNavItem href="/resume">Resume</MobileNavItem>
           </ul>
         </nav>
       </PopoverPanel>
     </Popover>
-  );
-}
-
-function NavItem({ href, children }: { href: string; children: ReactNode }) {
-  return (
-    <li>
-      <PopoverButton as={Link} href={href} className="block py-2">
-        {children}
-      </PopoverButton>
-    </li>
   );
 }

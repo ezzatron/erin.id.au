@@ -1,16 +1,11 @@
 import react from "@vitejs/plugin-react";
+import { playwright } from "@vitest/browser-playwright";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
 
 const isCI = process.env.CI === "true";
 const timeout = isCI ? 30000 : 3000;
 const isDefaultProjects = !process.argv.some((a) => a.match(/^--project\b/));
-
-const browserOptions = {
-  context: {
-    timezoneId: "UTC",
-  },
-} as const;
 
 export default defineConfig({
   plugins: [tsconfigPaths(), react()],
@@ -32,16 +27,17 @@ export default defineConfig({
     browser: {
       enabled: true,
       headless: true,
-      provider: "playwright",
+      provider: playwright({
+        contextOptions: {
+          timezoneId: "UTC",
+        },
+      }),
       screenshotDirectory: "artifacts/vitest/browser/screenshots",
       instances: [
-        { ...browserOptions, browser: "chromium" },
+        { browser: "chromium" },
         ...(isDefaultProjects
           ? []
-          : [
-              { ...browserOptions, browser: "firefox" },
-              { ...browserOptions, browser: "webkit" },
-            ]),
+          : ([{ browser: "firefox" }, { browser: "webkit" }] as const)),
       ],
     },
   },

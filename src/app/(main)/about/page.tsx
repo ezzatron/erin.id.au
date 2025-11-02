@@ -12,6 +12,7 @@ import Link from "next/link";
 import type { ComponentType, ReactNode } from "react";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://erin.id.au"),
   title: "About",
   description:
     "Hi! I'm Erin, and I've been making software for 20+ years. I have a proven track record of building and leading outstanding dev teams. My passion, dedication to quality, technical knowledge, and people skills have helped produce software that is both loved by users, and a joy to work on for the devs I work with.",
