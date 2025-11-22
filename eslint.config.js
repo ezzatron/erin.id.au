@@ -1,8 +1,6 @@
 // @ts-check
 import vitest from "@vitest/eslint-plugin";
-// @ts-expect-error: Missing types
 import nextVitals from "eslint-config-next/core-web-vitals";
-// @ts-expect-error: Missing types
 import nextTs from "eslint-config-next/typescript";
 import prettier from "eslint-config-prettier";
 import { defineConfig, globalIgnores } from "eslint/config";
