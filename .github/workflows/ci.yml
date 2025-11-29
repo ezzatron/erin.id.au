@@ -19,7 +19,7 @@ jobs:
           echo "MAKEFLAGS=d" >> "$GITHUB_ENV"
 
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Unify file modification times
         run: TOUCH_TIME="$(date -u +"%FT%TZ")" git ls-files -z | xargs -0 touch -d "$TOUCH_TIME"
