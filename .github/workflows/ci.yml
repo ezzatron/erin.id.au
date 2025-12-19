@@ -57,21 +57,21 @@ jobs:
 
       - name: Upload Playwright report
         if: "!cancelled() && steps.detect-artifacts.outputs.playwright == 'true'"
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: playwright-report-${{ steps.detect-artifacts.outputs.suffix }}
           path: artifacts/playwright/report/html
 
       - name: Upload Vitest screenshots
         if: "!cancelled() && steps.detect-artifacts.outputs.vitest-screenshots == 'true'"
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: vitest-screenshots-${{ steps.detect-artifacts.outputs.suffix }}
           path: artifacts/vitest/browser/screenshots
 
       - name: Upload package manager files
         if: "!cancelled()"
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: package-manager-files-${{ steps.detect-artifacts.outputs.suffix }}
           if-no-files-found: ignore
