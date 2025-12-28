@@ -38,7 +38,7 @@ jobs:
         run: echo "version=$(npm ls playwright | grep -m1 -oE 'playwright@\S+' | cut -d'@' -f2)" >> "$GITHUB_OUTPUT"
 
       - name: Cache Playwright
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
