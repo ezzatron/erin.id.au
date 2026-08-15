@@ -13,6 +13,9 @@ export default createConfig({
       permanent: false,
     },
   ],
+  experimental: {
+    useTypeScriptCli: false,
+  },
 });
 
 function createConfig(config: NextConfig): NextConfig {
