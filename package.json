@@ -3,6 +3,7 @@
   "type": "module",
   "allowScripts": {
     "msw": true,
+    "sharp": true,
     "unrs-resolver": true
   },
   "dependencies": {
