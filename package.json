@@ -1,6 +1,10 @@
 {
   "private": true,
   "type": "module",
+  "allowScripts": {
+    "msw": true,
+    "unrs-resolver": true
+  },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
     "@next/bundle-analyzer": "^16.0.1",
