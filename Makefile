@@ -9,7 +9,7 @@ JS_VITEST_REQ += playwright-install
 -include .makefiles/pkg/js/v1/with-next.mk
 
 .makefiles/%:
-	@curl -sfL https://makefiles.dev/v1 | bash /dev/stdin "$@"
+	@curl -sfL https://makefiles.dev/v1 | bash -s -- "$@"
 
 ################################################################################
 
