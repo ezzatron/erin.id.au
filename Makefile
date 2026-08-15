@@ -1,3 +1,4 @@
+JS_NPM_INSTALL_ARGS := --include=dev
 JS_VITEST_REQ += playwright-install
 
 -include .makefiles/Makefile
