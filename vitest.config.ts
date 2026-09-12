@@ -15,6 +15,7 @@ export default defineConfig({
   },
   test: {
     watch: false,
+    attachmentsDir: "artifacts/vitest/attachments",
     hookTimeout: timeout,
     testTimeout: timeout,
     teardownTimeout: timeout,
