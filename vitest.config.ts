@@ -13,6 +13,17 @@ export default defineConfig({
   define: {
     "process.env": JSON.stringify({}),
   },
+  optimizeDeps: {
+    include: [
+      "@headlessui/react",
+      "clsx",
+      "lucide-react",
+      "next/image",
+      "next/link",
+      "next/navigation",
+    ],
+    exclude: ["next", "next/cache", "next/headers", "sharp"],
+  },
   test: {
     watch: false,
     attachmentsDir: "artifacts/vitest/attachments",
